@@ -1,4 +1,9 @@
+# Todo List - Ruairi Patterson
+
+Created using tutorial by Kapehe Jorgenson (Digital Ocean, December 2019)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Citation; https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks#step-7-%E2%80%94-bringing-the-app-together
 
 ## Available Scripts
 
