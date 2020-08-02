@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import "./App.css";
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
 
-const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
+function Todo({ todo, index, completeTodo, removeTodo }) {
+  return (
+    <div
+      className="todo"
+      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+    >
+      {todo.text}
+
+      <div>
+        <button onClick={() => completeTodo(index)}>Complete</button>
+        <button onClick={() => removeTodo(index)}>x</button>
+      </div>
+    </div>
+  );
+}
 
 function TodoForm ( {addTodo }) {
 const [value, setValue] = useState("");
@@ -50,8 +63,20 @@ function App() {
     }
   ]);
 
+  const completeTodo = index => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = true;
+    setTodos(newTodos);
+  };
+
   const addTodo = text => {
     const newTodos = [...todos, { text }];
+    setTodos(newTodos);
+  };
+
+  const removeTodo = index => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
     setTodos(newTodos);
   };
 
@@ -64,6 +89,8 @@ function App() {
             key={index}
             index={index}
             todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
           />
         ))}
         <TodoForm addTodo={addTodo} />
