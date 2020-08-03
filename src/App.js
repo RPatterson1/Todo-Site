@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 //import logo from './logo.svg';
+import Particles from 'react-particles-js';
 
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
@@ -44,6 +45,8 @@ const [value, setValue] = useState("");
 
 function App() {
 
+  
+
   const [todos, setTodos] = useState([
     { 
       text: "Learn about React",
@@ -81,9 +84,13 @@ function App() {
   };
 
   // we'll render our todos here ...
+  // particles order must be checked... see soon...
   return (
-    <div className="app">
-      <div className="todo-list">
+  <div  className="background">
+    <div id = "bkr" className="app">
+      
+      
+      <div id = "todol" className="todo-list">
         {todos.map((todo, index) => (
           <Todo
             key={index}
@@ -93,9 +100,29 @@ function App() {
             removeTodo={removeTodo}
           />
         ))}
+        
         <TodoForm addTodo={addTodo} />
+        
       </div>
+      <Particles 
+        params={{ 
+          particles: { 
+            number: { 
+              value: 200, 
+              density: { 
+                enable: true, 
+                value_area: 1000, 
+              } 
+            }, 
+          }, 
+        }} /> 
     </div>
+
+  </div>
+    
+    
+
+
   );
 
 }
