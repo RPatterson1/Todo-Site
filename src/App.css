@@ -1,7 +1,7 @@
 .app {
   background: #DC143C;
   opacity: 0.9;
-  padding: 30px;
+  padding: 20px;
   height: 100vh;
 }
 
@@ -10,6 +10,9 @@
   border-radius: 4px;
   padding: 5px;
   max-width: 400px;
+  position: absolute;
+  top: 45%;
+  left: 45%;
 }
 
 .todo {
@@ -30,7 +33,6 @@
 
 #todol {
   z-index: 1;
-  position: fixed;
 }
 
 /* 

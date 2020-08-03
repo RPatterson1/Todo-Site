@@ -84,7 +84,7 @@ function App() {
   };
 
   // we'll render our todos here ...
-  // particles order must be checked... see soon...
+  // particles must be behind background, using div id's to set z-index/order of render
   return (
   <div  className="background">
     <div id = "bkr" className="app">
